@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjp7470hdms27"]
+
+[ext_resource type="Script" path="res://variable-visualiser/Root.gd" id="1_a0p48"]
+
+[node name="Root" type="Node"]
+script = ExtResource("1_a0p48")

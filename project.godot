@@ -11,8 +11,16 @@ config_version=5
 [application]
 
 config/name="Variable Visualiser"
+run/main_scene="res://variable-visualiser/Root.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+window/size/borderless=true
 
 [rendering]
 
