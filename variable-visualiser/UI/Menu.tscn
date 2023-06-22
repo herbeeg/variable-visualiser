@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfjutryau22rv"]
+[gd_scene load_steps=4 format=3 uid="uid://bfjutryau22rv"]
 
 [ext_resource type="FontFile" uid="uid://b6ahe2cavd1lv" path="res://variable-visualiser/Assets/Fonts/NotoSans-Bold.ttf" id="1_3son7"]
+[ext_resource type="FontFile" uid="uid://ccs47sgkgku4n" path="res://variable-visualiser/Assets/Fonts/NotoSans-Regular.ttf" id="2_tev8c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x8767"]
+content_margin_left = 64.0
+content_margin_top = 16.0
+content_margin_right = 64.0
+content_margin_bottom = 16.0
 
 [node name="Menu" type="MarginContainer"]
 anchors_preset = 15
@@ -20,3 +27,40 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_3son7")
 theme_override_font_sizes/font_size = 48
 text = "Variable Visualiser"
+
+[node name="VersionContainer" type="CenterContainer" parent="MenuStackContainer"]
+layout_mode = 2
+
+[node name="VersionLabel" type="Label" parent="MenuStackContainer/VersionContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tev8c")
+theme_override_font_sizes/font_size = 16
+text = "v0.1.0"
+
+[node name="NameContainer" type="CenterContainer" parent="MenuStackContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MenuStackContainer/NameContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tev8c")
+theme_override_font_sizes/font_size = 36
+text = "Jon Herbst"
+
+[node name="LinkContainer" type="CenterContainer" parent="MenuStackContainer"]
+layout_mode = 2
+
+[node name="LinkLabel" type="Label" parent="MenuStackContainer/LinkContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tev8c")
+theme_override_font_sizes/font_size = 24
+text = "https://github.com/herbeeg/variable-visualiser"
+
+[node name="StartContainer" type="CenterContainer" parent="MenuStackContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MenuStackContainer/StartContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3son7")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x8767")
+text = "Start"
