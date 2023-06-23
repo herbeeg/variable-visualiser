@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cawd2pq05f5c8"]
+[gd_scene load_steps=3 format=3 uid="uid://cawd2pq05f5c8"]
 
 [ext_resource type="FontFile" uid="uid://b6ahe2cavd1lv" path="res://variable-visualiser/Assets/Fonts/NotoSans-Bold.ttf" id="1_7v3rw"]
+[ext_resource type="FontFile" uid="uid://ccs47sgkgku4n" path="res://variable-visualiser/Assets/Fonts/NotoSans-Regular.ttf" id="2_0e6ah"]
 
 [node name="Settings" type="MarginContainer"]
 anchors_preset = 15
@@ -20,3 +21,15 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_7v3rw")
 theme_override_font_sizes/font_size = 48
 text = "Settings"
+
+[node name="SettingsListContainer" type="VBoxContainer" parent="SettingsStackContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsStackContainer/SettingsListContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0e6ah")
+theme_override_font_sizes/font_size = 24
+text = "Theme"
+
+[node name="OptionButton" type="OptionButton" parent="SettingsStackContainer/SettingsListContainer"]
+layout_mode = 2
