@@ -1,12 +1,19 @@
 extends Node
 
 var menu = null
+var settings = null
 
 func _ready():
 	menu = create_instance('res://variable-visualiser/UI/Menu.tscn')
+	settings = create_instance('res://variable-visualiser/UI/Settings.tscn')
+	
 	configureMargins(menu, 64)
+	configureMargins(settings, 64)
 	
 	self.add_child(menu)
+	
+	var start_button_instance = get_node('Menu/MenuStackContainer/StartContainer/StartButton')
+	start_button_instance.pressed.connect(self._startButtonPressed)
 	
 func create_instance(s : String) -> Node:
 	var scene = load(s)
@@ -17,3 +24,7 @@ func configureMargins(parent : Node, margin_val : int) -> void:
 	parent.add_theme_constant_override("margin_left", margin_val)
 	parent.add_theme_constant_override("margin_bottom", margin_val)
 	parent.add_theme_constant_override("margin_right", margin_val)
+	
+func _startButtonPressed() -> void:
+	self.remove_child(menu)
+	self.add_child(settings)
