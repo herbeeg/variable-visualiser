@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cawd2pq05f5c8"]
+
+[node name="Settings" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SettingsStackContainer" type="VBoxContainer" parent="."]
+layout_mode = 2

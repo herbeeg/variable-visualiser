@@ -28,6 +28,10 @@ theme_override_fonts/font = ExtResource("1_3son7")
 theme_override_font_sizes/font_size = 48
 text = "Variable Visualiser"
 
+[node name="TitleSeparator" type="HSeparator" parent="MenuStackContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="VersionContainer" type="CenterContainer" parent="MenuStackContainer"]
 layout_mode = 2
 
@@ -36,6 +40,10 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_tev8c")
 theme_override_font_sizes/font_size = 16
 text = "v0.1.0"
+
+[node name="VersionSeparator" type="HSeparator" parent="MenuStackContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="NameContainer" type="CenterContainer" parent="MenuStackContainer"]
 layout_mode = 2
@@ -46,14 +54,23 @@ theme_override_fonts/font = ExtResource("2_tev8c")
 theme_override_font_sizes/font_size = 36
 text = "Jon Herbst"
 
+[node name="NameSeparator" type="HSeparator" parent="MenuStackContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="LinkContainer" type="CenterContainer" parent="MenuStackContainer"]
 layout_mode = 2
 
-[node name="LinkLabel" type="Label" parent="MenuStackContainer/LinkContainer"]
+[node name="LinkButton" type="LinkButton" parent="MenuStackContainer/LinkContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_tev8c")
 theme_override_font_sizes/font_size = 24
-text = "https://github.com/herbeeg/variable-visualiser"
+text = "Source (https://github.com/herbeeg/variable-visualiser)"
+uri = "https://github.com/herbeeg/variable-visualiser"
+
+[node name="LinkSeparator" type="HSeparator" parent="MenuStackContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="StartContainer" type="CenterContainer" parent="MenuStackContainer"]
 layout_mode = 2
