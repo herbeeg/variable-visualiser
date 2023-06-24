@@ -25,11 +25,57 @@ text = "Settings"
 [node name="SettingsListContainer" type="VBoxContainer" parent="SettingsStackContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="SettingsStackContainer/SettingsListContainer"]
+[node name="ThemeLabel" type="Label" parent="SettingsStackContainer/SettingsListContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_0e6ah")
 theme_override_font_sizes/font_size = 24
 text = "Theme"
 
-[node name="OptionButton" type="OptionButton" parent="SettingsStackContainer/SettingsListContainer"]
+[node name="ThemeDropdown" type="OptionButton" parent="SettingsStackContainer/SettingsListContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0e6ah")
+theme_override_font_sizes/font_size = 16
+item_count = 5
+popup/item_0/text = "Ribena"
+popup/item_0/id = 0
+popup/item_1/text = "Tea"
+popup/item_1/id = 1
+popup/item_2/text = "Moonlight"
+popup/item_2/id = 2
+popup/item_3/text = "Sunrise"
+popup/item_3/id = 3
+popup/item_4/text = "7even"
+popup/item_4/id = 4
+
+[node name="ShapeLabel" type="Label" parent="SettingsStackContainer/SettingsListContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0e6ah")
+theme_override_font_sizes/font_size = 24
+text = "Shape"
+
+[node name="ShapeDropdown" type="OptionButton" parent="SettingsStackContainer/SettingsListContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0e6ah")
+theme_override_font_sizes/font_size = 16
+
+[node name="BackgroundLabel" type="Label" parent="SettingsStackContainer/SettingsListContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0e6ah")
+theme_override_font_sizes/font_size = 24
+text = "Background"
+
+[node name="BackgroundDropdown" type="OptionButton" parent="SettingsStackContainer/SettingsListContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0e6ah")
+theme_override_font_sizes/font_size = 16
+
+[node name="FilterLabel" type="Label" parent="SettingsStackContainer/SettingsListContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0e6ah")
+theme_override_font_sizes/font_size = 24
+text = "Filter"
+
+[node name="FilterDropdown" type="OptionButton" parent="SettingsStackContainer/SettingsListContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0e6ah")
+theme_override_font_sizes/font_size = 16
