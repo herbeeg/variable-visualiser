@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dnu573dkgiku8"]
+
+[node name="AudioFileFinderDialog" type="FileDialog"]
+title = "Open a File"
+ok_button_text = "Open"
+file_mode = 0
+show_hidden_files = true
