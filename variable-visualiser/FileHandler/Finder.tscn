@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://dnu573dkgiku8"]
+[gd_scene load_steps=2 format=3 uid="uid://dnu573dkgiku8"]
+
+[ext_resource type="Script" path="res://variable-visualiser/FileHandler/Finder.gd" id="1_g8pbn"]
 
 [node name="AudioFileFinderDialog" type="FileDialog"]
 title = "Open a File"
 ok_button_text = "Open"
 file_mode = 0
 show_hidden_files = true
+script = ExtResource("1_g8pbn")

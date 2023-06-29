@@ -2,6 +2,7 @@ extends Node
 
 var menu = null
 var settings = null
+var finder = null
 
 func _ready():
 	menu = create_instance('res://variable-visualiser/UI/Menu.tscn')
@@ -28,3 +29,16 @@ func configureMargins(parent : Node, margin_val : int) -> void:
 func _startButtonPressed() -> void:
 	self.remove_child(menu)
 	self.add_child(settings)
+	
+	var load_button_instance = get_node('Settings/SettingsStackContainer/LoadContainer/LoadButton')
+	load_button_instance.pressed.connect(self._loadAudioButtonPressed)
+	
+func _loadAudioButtonPressed() -> void:
+	finder = create_instance('res://variable-visualiser/FileHandler/Finder.tscn')
+	settings.add_child(finder)
+	finder.popup()
+	
+	finder.path_selected.connect(self._loadAudioFileSelected)
+	
+func _loadAudioFileSelected(path : String, ident : String) -> void:
+	return
