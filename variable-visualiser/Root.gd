@@ -41,4 +41,4 @@ func _loadAudioButtonPressed() -> void:
 	finder.path_selected.connect(self._loadAudioFileSelected)
 	
 func _loadAudioFileSelected(path : String, ident : String) -> void:
-	return
+	print(path)
