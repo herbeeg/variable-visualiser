@@ -14,7 +14,7 @@ func applyMods() -> void:
 	# Only allow specific audio files to be selected.
 	self.add_filter('*.wav, *.mp3, *.ogg', 'Audio Files')
 	# Permit access to the entire filesystem.
-	self.access = 2
+	self.access = FileDialog.ACCESS_FILESYSTEM
 	# Avoid warping of audio file selection dialog.
 	self.unresizable = true
 

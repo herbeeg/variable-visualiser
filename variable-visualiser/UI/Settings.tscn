@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cawd2pq05f5c8"]
+[gd_scene load_steps=4 format=3 uid="uid://cawd2pq05f5c8"]
 
 [ext_resource type="FontFile" uid="uid://b6ahe2cavd1lv" path="res://variable-visualiser/Assets/Fonts/NotoSans-Bold.ttf" id="1_7v3rw"]
 [ext_resource type="FontFile" uid="uid://ccs47sgkgku4n" path="res://variable-visualiser/Assets/Fonts/NotoSans-Regular.ttf" id="2_0e6ah"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ju363"]
+content_margin_left = 64.0
+content_margin_top = 16.0
+content_margin_right = 64.0
+content_margin_bottom = 16.0
 
 [node name="Settings" type="MarginContainer"]
 anchors_preset = 15
@@ -137,4 +143,7 @@ layout_mode = 2
 
 [node name="LoadButton" type="Button" parent="SettingsStackContainer/LoadContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7v3rw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ju363")
 text = "Load audio"
