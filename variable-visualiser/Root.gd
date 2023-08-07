@@ -3,6 +3,8 @@ extends Node
 var menu = null
 var settings = null
 var finder = null
+var viewport = null
+var overlay = null
 
 func _ready():
 	menu = create_instance('res://variable-visualiser/UI/Menu.tscn')
@@ -34,6 +36,14 @@ func gatherConfig() -> void:
 	GlobalSettings.visual['background'] = settings_container_parent.get_child(7).get_item_text(settings_container_parent.get_child(7).get_selected_id()).to_lower()
 	GlobalSettings.visual['filter'] = settings_container_parent.get_child(9).get_item_text(settings_container_parent.get_child(9).get_selected_id()).to_lower()
 	
+func generateAudioStream(path : String) -> void:
+	var sample = load(path)
+	var player = AudioStreamPlayer.new()
+	player.stream = sample
+	
+	self.add_child(player)
+	player.play()
+
 func _startButtonPressed() -> void:
 	self.remove_child(menu)
 	self.add_child(settings)
@@ -50,3 +60,13 @@ func _loadAudioButtonPressed() -> void:
 	
 func _loadAudioFileSelected(path : String, ident : String) -> void:
 	gatherConfig()
+	
+	viewport = create_instance('res://variable-visualiser/Viewports/Base.tscn')
+	overlay = create_instance('res://variable-visualiser/UI/Overlay.tscn')
+	
+	self.remove_child(settings)
+	self.add_child(viewport)
+	
+	generateAudioStream(path)
+	
+	viewport.add_child(overlay)

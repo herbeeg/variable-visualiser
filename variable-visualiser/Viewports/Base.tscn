@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq3ueab2dryr2"]
+
+[ext_resource type="Script" path="res://variable-visualiser/Viewports/Base.gd" id="1_nftm1"]
+
+[node name="Base" type="Node3D"]
+script = ExtResource("1_nftm1")
