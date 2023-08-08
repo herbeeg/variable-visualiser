@@ -41,6 +41,8 @@ func generateAudioStream(path : String) -> void:
 	var player = AudioStreamPlayer.new()
 	player.stream = sample
 	
+	GlobalSettings.overlay['duration'] = int(floor(sample.get_length()))
+	
 	self.add_child(player)
 	player.play()
 
@@ -69,4 +71,6 @@ func _loadAudioFileSelected(path : String, ident : String) -> void:
 	
 	generateAudioStream(path)
 	
+	# Pad the text and timer(s) to ensure nothing is clipped from the outer edges.
+	configureMargins(overlay, 64)
 	viewport.add_child(overlay)
