@@ -9,4 +9,6 @@ extends Node
 	'filter': 'none'
 }
 
-@onready var overlay = []
+@onready var overlay = {
+	'duration': 0
+}
