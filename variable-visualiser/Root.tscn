@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjp7470hdms27"]
+[gd_scene load_steps=3 format=3 uid="uid://cjp7470hdms27"]
 
 [ext_resource type="Script" path="res://variable-visualiser/Root.gd" id="1_a0p48"]
 
+[sub_resource type="Environment" id="Environment_uqcpq"]
+background_mode = 1
+
 [node name="Root" type="Node"]
 script = ExtResource("1_a0p48")
+
+[node name="BackgroundEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uqcpq")
+
+[node name="SceneLighting" type="OmniLight3D" parent="."]
+omni_range = 4096.0
+
+[node name="SceneCamera" type="Camera3D" parent="."]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://4tfbiht0odya"]
 
-[ext_resource type="FontFile" uid="uid://ccs47sgkgku4n" path="res://variable-visualiser/Assets/Fonts/NotoSans-Regular.ttf" id="1_ovqui"]
 [ext_resource type="Script" path="res://variable-visualiser/UI/Overlay.gd" id="1_tjm2q"]
+[ext_resource type="FontFile" uid="uid://b6ahe2cavd1lv" path="res://variable-visualiser/Assets/Fonts/NotoSans-Bold.ttf" id="2_1qtuv"]
 
 [node name="Overlay" type="MarginContainer"]
 anchors_preset = 15
@@ -15,5 +15,5 @@ script = ExtResource("1_tjm2q")
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("1_ovqui")
+theme_override_fonts/font = ExtResource("2_1qtuv")
 theme_override_font_sizes/font_size = 24

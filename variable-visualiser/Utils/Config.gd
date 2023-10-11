@@ -9,6 +9,7 @@ extends Node
 	'filter': 'none'
 }
 
+# Overlay data.
 @onready var overlay = {
 	'duration': 0
 }

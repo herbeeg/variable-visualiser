@@ -6,9 +6,14 @@ var finder = null
 var viewport = null
 var overlay = null
 
-func _ready():
+# MeshLibrary instances.
+var cube_library = null
+
+func _ready() -> void:
 	menu = create_instance('res://variable-visualiser/UI/Menu.tscn')
 	settings = create_instance('res://variable-visualiser/UI/Settings.tscn')
+	
+	cube_library = load('res://variable-visualiser/MeshSource/CubeLibrary.tres')
 	
 	configureMargins(menu, 64)
 	configureMargins(settings, 64)
@@ -45,6 +50,16 @@ func generateAudioStream(path : String) -> void:
 	
 	self.add_child(player)
 	player.play()
+	
+func applyTheme() -> void:
+	var environment_instance = get_node('BackgroundEnvironment')
+	
+	if 'ribena' == GlobalSettings.visual['theme']:
+		environment_instance.environment.background_color = GlobalThemes.ribena['bg']
+	elif 'tea' == GlobalSettings.visual['theme']:
+		environment_instance.environment.background_color = GlobalThemes.tea['bg']
+	elif 'sunrise' == GlobalSettings.visual['theme']:
+		environment_instance.environment.background_color = GlobalThemes.sunrise['bg']
 
 func _startButtonPressed() -> void:
 	self.remove_child(menu)
@@ -73,4 +88,21 @@ func _loadAudioFileSelected(path : String, ident : String) -> void:
 	
 	# Pad the text and timer(s) to ensure nothing is clipped from the outer edges.
 	configureMargins(overlay, 64)
+	# Change the colours before displaying the overlay.
+	applyTheme()
+	
 	viewport.add_child(overlay)
+	
+	if 'wave' == GlobalSettings.visual['shape']:
+		return
+	elif 'sphere' == GlobalSettings.visual['shape']:
+		return
+	elif 'cube' == GlobalSettings.visual['shape']:
+		var cube_import = cube_library.get_item_mesh(0)
+		var cube_mesh = MeshInstance3D.new()
+		cube_mesh.mesh = cube_import
+		viewport.add_child(cube_mesh)
+	elif 'pyramid' == GlobalSettings.visual['shape']:
+		return
+	elif 'cylinder' == GlobalSettings.visual['shape']:
+		return
